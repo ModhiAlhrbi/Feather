@@ -14,13 +14,11 @@ feature 4 : The application saves user requests
 
 User Stories :
  
-user must register in the application using the full name, mobile phone number and password.
+- As a user, you must register in the application using your full name, mobile phone number and password.
 
-User can add important information to the profile such as mobile phone number and address.
+- As a user I can add necessary information to the profile such as mobile phone number and address.
 
-user can choose the type of service required according to the available dates and add it to the list of requests.
-
-
+- As a user, you must choose the type of service required according to the available dates and add it to the list of requests.
 
 
 
