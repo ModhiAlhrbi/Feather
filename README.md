@@ -1,8 +1,8 @@
 # Spa Feather
 
 
-The application serves the ladies and provides home spa services
-
+The app serves ladies and provides home spa services.
+Through Feather Spa, you can book an appointment online with ease and comfort.
 
 feature list :
 
