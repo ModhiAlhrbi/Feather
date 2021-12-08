@@ -45,13 +45,16 @@ class ServiceViewController: UIViewController , UITableViewDelegate,UITableViewD
     }
    
     
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let photo = arrServices[indexPath.row].imgServicePhoto
         
         let photoWidthRatio = photo.size.width / photo.size.height
         return tableView.frame.width / photoWidthRatio
     }
-    
     
     
     
