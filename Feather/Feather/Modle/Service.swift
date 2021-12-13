@@ -12,5 +12,6 @@ struct Service {
    
     let nameService :String
     let imgServicePhoto : UIImage
+   // let timeService: Date
     
 }

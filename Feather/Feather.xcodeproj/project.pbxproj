@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290BDEED2766127D00A84090 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BDEEC2766127D00A84090 /* ViewController.swift */; };
+		290BDEEF27673CDD00A84090 /* ListSallonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BDEEE27673CDC00A84090 /* ListSallonsTableViewController.swift */; };
+		297514852760CCDA001F9BFB /* Saloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297514842760CCDA001F9BFB /* Saloon.swift */; };
+		2975148F2765E067001F9BFB /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2975148E2765E067001F9BFB /* OrderListViewController.swift */; };
+		297514912765EA14001F9BFB /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297514902765EA14001F9BFB /* UserApi.swift */; };
+		29751495276610F5001F9BFB /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751494276610F5001F9BFB /* SignInVC.swift */; };
+		2975149727661110001F9BFB /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2975149627661110001F9BFB /* SignUpVC.swift */; };
 		29A7B81F275CEF1300E14A46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A7B81E275CEF1300E14A46 /* AppDelegate.swift */; };
 		29A7B821275CEF1300E14A46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A7B820275CEF1300E14A46 /* SceneDelegate.swift */; };
-		29A7B823275CEF1300E14A46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A7B822275CEF1300E14A46 /* ViewController.swift */; };
 		29A7B826275CEF1300E14A46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A7B824275CEF1300E14A46 /* Main.storyboard */; };
 		29A7B829275CEF1300E14A46 /* Feather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29A7B827275CEF1300E14A46 /* Feather.xcdatamodeld */; };
 		29A7B82B275CEF1400E14A46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A7B82A275CEF1400E14A46 /* Assets.xcassets */; };
@@ -47,10 +53,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		290BDEEC2766127D00A84090 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		290BDEEE27673CDC00A84090 /* ListSallonsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSallonsTableViewController.swift; sourceTree = "<group>"; };
+		297514842760CCDA001F9BFB /* Saloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saloon.swift; sourceTree = "<group>"; };
+		2975148E2765E067001F9BFB /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		297514902765EA14001F9BFB /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
+		29751494276610F5001F9BFB /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		2975149627661110001F9BFB /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		29A7B81B275CEF1300E14A46 /* Feather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A7B81E275CEF1300E14A46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29A7B820275CEF1300E14A46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		29A7B822275CEF1300E14A46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		29A7B825275CEF1300E14A46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29A7B828275CEF1300E14A46 /* Feather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Feather.xcdatamodel; sourceTree = "<group>"; };
 		29A7B82A275CEF1400E14A46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +110,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		290BDEF027673CF300A84090 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				29A7B869276087EF00E14A46 /* SalonsPhotoCollectionViewCell.swift */,
+				29A7B861275F761900E14A46 /* ServisesTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2975148B2765D17D001F9BFB /* Modle */ = {
+			isa = PBXGroup;
+			children = (
+				29A7B853275E36FB00E14A46 /* User.swift */,
+				297514902765EA14001F9BFB /* UserApi.swift */,
+				297514842760CCDA001F9BFB /* Saloon.swift */,
+				29A7B865275F91E900E14A46 /* Service.swift */,
+			);
+			path = Modle;
+			sourceTree = "<group>";
+		};
 		29A7B812275CEF1300E14A46 = {
 			isa = PBXGroup;
 			children = (
@@ -121,22 +153,16 @@
 		29A7B81D275CEF1300E14A46 /* Feather */ = {
 			isa = PBXGroup;
 			children = (
+				2975148B2765D17D001F9BFB /* Modle */,
 				29A7B855275E416E00E14A46 /* controller */,
 				29A7B81E275CEF1300E14A46 /* AppDelegate.swift */,
 				29A7B820275CEF1300E14A46 /* SceneDelegate.swift */,
-				29A7B822275CEF1300E14A46 /* ViewController.swift */,
 				29A7B863275F7CB200E14A46 /* GoogleService-Info.plist */,
 				29A7B824275CEF1300E14A46 /* Main.storyboard */,
 				29A7B82A275CEF1400E14A46 /* Assets.xcassets */,
 				29A7B82C275CEF1400E14A46 /* LaunchScreen.storyboard */,
 				29A7B82F275CEF1400E14A46 /* Info.plist */,
 				29A7B827275CEF1300E14A46 /* Feather.xcdatamodeld */,
-				29A7B853275E36FB00E14A46 /* User.swift */,
-				29A7B85F275F75F300E14A46 /* ServiceViewController.swift */,
-				29A7B861275F761900E14A46 /* ServisesTableViewCell.swift */,
-				29A7B865275F91E900E14A46 /* Service.swift */,
-				29A7B867276087A400E14A46 /* SallonPhotosViewController.swift */,
-				29A7B869276087EF00E14A46 /* SalonsPhotoCollectionViewCell.swift */,
 			);
 			path = Feather;
 			sourceTree = "<group>";
@@ -161,6 +187,14 @@
 		29A7B855275E416E00E14A46 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				29A7B85F275F75F300E14A46 /* ServiceViewController.swift */,
+				29A7B867276087A400E14A46 /* SallonPhotosViewController.swift */,
+				290BDEEE27673CDC00A84090 /* ListSallonsTableViewController.swift */,
+				2975148E2765E067001F9BFB /* OrderListViewController.swift */,
+				290BDEEC2766127D00A84090 /* ViewController.swift */,
+				29751494276610F5001F9BFB /* SignInVC.swift */,
+				2975149627661110001F9BFB /* SignUpVC.swift */,
+				290BDEF027673CF300A84090 /* Cells */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -305,15 +339,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				290BDEED2766127D00A84090 /* ViewController.swift in Sources */,
+				297514852760CCDA001F9BFB /* Saloon.swift in Sources */,
+				2975148F2765E067001F9BFB /* OrderListViewController.swift in Sources */,
 				29A7B868276087A400E14A46 /* SallonPhotosViewController.swift in Sources */,
 				29A7B86A276087EF00E14A46 /* SalonsPhotoCollectionViewCell.swift in Sources */,
-				29A7B823275CEF1300E14A46 /* ViewController.swift in Sources */,
+				29751495276610F5001F9BFB /* SignInVC.swift in Sources */,
 				29A7B866275F91E900E14A46 /* Service.swift in Sources */,
 				29A7B81F275CEF1300E14A46 /* AppDelegate.swift in Sources */,
 				29A7B854275E36FB00E14A46 /* User.swift in Sources */,
 				29A7B860275F75F300E14A46 /* ServiceViewController.swift in Sources */,
 				29A7B862275F761900E14A46 /* ServisesTableViewCell.swift in Sources */,
 				29A7B821275CEF1300E14A46 /* SceneDelegate.swift in Sources */,
+				297514912765EA14001F9BFB /* UserApi.swift in Sources */,
+				2975149727661110001F9BFB /* SignUpVC.swift in Sources */,
+				290BDEEF27673CDD00A84090 /* ListSallonsTableViewController.swift in Sources */,
 				29A7B829275CEF1300E14A46 /* Feather.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

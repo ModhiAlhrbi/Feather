@@ -9,6 +9,8 @@ import UIKit
 
 class ServiceViewController: UIViewController , UITableViewDelegate,UITableViewDataSource {
     
+    var selctedService : Service?
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -18,10 +20,10 @@ class ServiceViewController: UIViewController , UITableViewDelegate,UITableViewD
         Service(nameService: "Skin cleaning", imgServicePhoto: UIImage(named: "Skin cleaning1")!),
         Service(nameService: "Massage", imgServicePhoto: UIImage(named: "Massage1")!),
         Service(nameService: "Makeup", imgServicePhoto: UIImage(named: "makeup1")!)
-        ]
+    ]
     
     
-    //var arrService = [UIImage(named: "pedicure1")!, UIImage(named: "manicure2")! ,UIImage(named: "Skin cleaning1")!,UIImage(named: "Massage1")!,UIImage(named: "makeup1")!]
+    
     
     
     override func viewDidLoad() {
@@ -35,17 +37,28 @@ class ServiceViewController: UIViewController , UITableViewDelegate,UITableViewD
         return arrServices.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selctedService = arrServices[indexPath.row]
+        performSegue(withIdentifier: "salonPhotosCell", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "salonPhotosCell" {
+            let destination = segue.destination as! SallonPhotosViewController
+            destination.selctedService = selctedService
+            
+            
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "serviceCell") as! ServisesTableViewCell
-      
+        
         cell.imgServicePhoto.image = arrServices[indexPath.row].imgServicePhoto
         cell.lablelService.text = arrServices[indexPath.row].nameService
         
         return cell
     }
-   
-    
-    
     
     
     
@@ -59,6 +72,6 @@ class ServiceViewController: UIViewController , UITableViewDelegate,UITableViewD
     
     
     
-   
+    
 }
-   
+
