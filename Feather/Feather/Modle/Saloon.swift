@@ -19,6 +19,6 @@ struct Saloon : Store {
 
     var name : String
     var imagSaloon : UIImage
-    var saloon : [Saloon]
+    var desc : String
     
 }

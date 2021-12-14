@@ -6,19 +6,38 @@
 //
 
 import UIKit
+import CoreData
 
 class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UIPickerViewDelegate,  UIPickerViewDataSource {
     
     
+    var persntenContiner : NSPersistentContainer = {
+        let contner = NSPersistentContainer(name: "Feather")
+        contner.loadPersistentStores(completionHandler: { des, error in
+            if let error = error {
+                print(error)
+            }
+            
+        })
+        return contner
+    } ()
+    
     var selctedService : Service?
     var setSelctedService : Service?
+    
+    
+    var order : Order!
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var pickerServic: UIPickerView!
     
-    @IBAction func addService(_ sender: Any) {
-        lblServiceName.text = arrServicesPicker[pickerServic.selectedRow(inComponent: 0)]
-    }
+    @IBOutlet weak var dateView: UITextField!
+    
+    
+    
+    
     @IBOutlet weak var lblServiceName: UILabel!
     
     
@@ -43,10 +62,10 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
     
     var timer : Timer?
     var currentCellIndex = 0
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         setSelctedService = selctedService
         pickerServic.delegate = self
         pickerServic.dataSource = self
@@ -87,7 +106,7 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
         return 0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0 
+        return 0
     }
     
     
@@ -119,12 +138,57 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
         
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.datePickerMode = .date
+        inputTextField.textAlignment = .center
         inputTextField.inputView = datePicker
         inputTextField.inputAccessoryView = createToolbar()
         
     }
-    @objc func donePressed() {
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
         
+        
+    }
+    
+    @objc func donePressed() {
+        let dateFormatter = DateFormatter ()
+        dateFormatter.dateStyle = .medium
+        
+        
+        self.inputTextField.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
+    
+    
+    @IBAction func addService(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "The appointment has been successfully booked ", message: "", preferredStyle:.alert)
+        alert.addAction(UIAlertAction(title: "ok", style: .cancel))
+        present(alert,animated: true)
+        
+        lblServiceName.text = arrServicesPicker[pickerServic.selectedRow(inComponent: 0)]
+        
+        let selectedServiceName = arrServicesPicker[pickerServic.selectedRow(inComponent: 0)]
+        let selctedServiceDate = datePicker.date
+        
+        
+        let context = persntenContiner.viewContext
+        context.performAndWait({
+            let newOrder = Order (context: context)
+            newOrder.serviceName = selectedServiceName
+            newOrder.date = selctedServiceDate
+            
+            do {
+                try  context.save()
+            } catch {
+                print(error)
+            }
+            
+        })
+        performSegue(withIdentifier: "orderListSegue", sender: nil)
+        
+    }
+    
+    
+    
 }
