@@ -10,8 +10,8 @@ import UIKit
 
 struct Service {
    
-    let nameService :String
+    let nameService : String
+    let description : String
     let imgServicePhoto : UIImage
-   // let timeService: Date
-    
+    let price : Double
 }

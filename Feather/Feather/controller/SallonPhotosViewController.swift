@@ -23,7 +23,6 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
     } ()
     
     var selctedService : Service?
-    var setSelctedService : Service?
     
     
     var order : Order!
@@ -49,7 +48,10 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
     
     var arrPhotoSallon = [UIImage(named: "FOGA")!,UIImage(named: "Foga1")!,UIImage(named: "Foga2")!,UIImage(named: "Foga3")!,UIImage(named: "Foga4")!,UIImage(named: "Foga5")!]
     
-    var arrServicesPicker = ["Pedicure","Manicure","Skin cleaning","Massage","Makeup"]
+    
+    
+    
+    var arrServicesPicker = ["Pedicure" ,"Manicure","Skin cleaning","Massage","Makeup"]
     /*Service(nameService: "Pedicure", imgServicePhoto: UIImage(named: "pedicure")!),
      Service(nameService: "Manicure", imgServicePhoto: UIImage(named: "manicure2")!),
      Service(nameService: "Skin cleaning", imgServicePhoto: UIImage(named: "Skin cleaning1")!),
@@ -66,13 +68,13 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setSelctedService = selctedService
         pickerServic.delegate = self
         pickerServic.dataSource = self
         collectionView.delegate = self
         collectionView.dataSource = self
         startTimer()
         creatDatePicker()
+        
     }
     
     func startTimer(){
@@ -175,7 +177,7 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
         let context = persntenContiner.viewContext
         context.performAndWait({
             let newOrder = Order (context: context)
-            newOrder.serviceName = selectedServiceName
+            newOrder.serviceName = selctedService?.nameService
             newOrder.date = selctedServiceDate
             
             do {

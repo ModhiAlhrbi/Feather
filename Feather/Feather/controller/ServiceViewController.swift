@@ -9,20 +9,16 @@ import UIKit
 
 class ServiceViewController: UIViewController , UITableViewDelegate,UITableViewDataSource {
     
+    
+    
+    
+    
     var selctedService : Service?
     
+    var selectedSalon : Salon!
+    
+    
     @IBOutlet weak var tableView: UITableView!
-    
-    
-    let arrServices = [
-        Service(nameService: "Pedicure", imgServicePhoto: UIImage(named: "pedicure1")!),
-        Service(nameService: "Manicure", imgServicePhoto: UIImage(named: "manicure2")!),
-        Service(nameService: "Skin cleaning", imgServicePhoto: UIImage(named: "Skin cleaning1")!),
-        Service(nameService: "Massage", imgServicePhoto: UIImage(named: "Massage1")!),
-        Service(nameService: "Makeup", imgServicePhoto: UIImage(named: "makeup1")!)
-    ]
-    
-    
     
     
     
@@ -34,11 +30,11 @@ class ServiceViewController: UIViewController , UITableViewDelegate,UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrServices.count
+        return selectedSalon.services.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selctedService = arrServices[indexPath.row]
+        selctedService = selectedSalon.services[indexPath.row]
         performSegue(withIdentifier: "salonPhotosCell", sender: nil)
     }
     
@@ -54,8 +50,8 @@ class ServiceViewController: UIViewController , UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "serviceCell") as! ServisesTableViewCell
         
-        cell.imgServicePhoto.image = arrServices[indexPath.row].imgServicePhoto
-        cell.lablelService.text = arrServices[indexPath.row].nameService
+        cell.imgServicePhoto.image = selectedSalon.services[indexPath.row].imgServicePhoto
+        cell.lablelService.text = selectedSalon.services[indexPath.row].nameService
         
         return cell
     }
@@ -63,7 +59,7 @@ class ServiceViewController: UIViewController , UITableViewDelegate,UITableViewD
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let photo = arrServices[indexPath.row].imgServicePhoto
+        let photo = selectedSalon.services[indexPath.row].imgServicePhoto
         
         let photoWidthRatio = photo.size.width / photo.size.height
         return tableView.frame.width / photoWidthRatio

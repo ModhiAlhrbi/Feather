@@ -1,5 +1,5 @@
 //
-//  SloneListTableViewCell.swift
+//  ListSallonTableViewCell.swift
 //  Feather
 //
 //  Created by موضي الحربي on 10/05/1443 AH.
@@ -7,8 +7,10 @@
 
 import UIKit
 
-class SloneListTableViewCell: UITableViewCell {
+class ListSallonTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imgListSallon: UIImageView!
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

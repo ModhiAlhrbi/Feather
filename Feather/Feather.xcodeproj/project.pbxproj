@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		290B36CC276875080022587D /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B36CB276875080022587D /* OrderTableViewController.swift */; };
-		290B36CE276877CD0022587D /* OrderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B36CD276877CD0022587D /* OrderList.swift */; };
-		290B36D02768959E0022587D /* SloneListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B36CF2768959E0022587D /* SloneListTableViewCell.swift */; };
 		290B36D32768A51F0022587D /* Order+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B36D12768A51F0022587D /* Order+CoreDataClass.swift */; };
 		290B36D42768A51F0022587D /* Order+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B36D22768A51F0022587D /* Order+CoreDataProperties.swift */; };
+		290B36DB2768CD090022587D /* ListSallonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B36DA2768CD090022587D /* ListSallonViewController.swift */; };
+		290B36DD2768CD2A0022587D /* ListSallonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B36DC2768CD2A0022587D /* ListSallonTableViewCell.swift */; };
+		290B36DF2768D86C0022587D /* Salon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B36DE2768D86C0022587D /* Salon.swift */; };
 		290BDEED2766127D00A84090 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BDEEC2766127D00A84090 /* ViewController.swift */; };
-		297514852760CCDA001F9BFB /* Saloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297514842760CCDA001F9BFB /* Saloon.swift */; };
 		297514912765EA14001F9BFB /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297514902765EA14001F9BFB /* UserApi.swift */; };
 		29751495276610F5001F9BFB /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751494276610F5001F9BFB /* SignInVC.swift */; };
 		2975149727661110001F9BFB /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2975149627661110001F9BFB /* SignUpVC.swift */; };
@@ -57,12 +57,12 @@
 
 /* Begin PBXFileReference section */
 		290B36CB276875080022587D /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
-		290B36CD276877CD0022587D /* OrderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderList.swift; sourceTree = "<group>"; };
-		290B36CF2768959E0022587D /* SloneListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SloneListTableViewCell.swift; sourceTree = "<group>"; };
 		290B36D12768A51F0022587D /* Order+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataClass.swift"; sourceTree = "<group>"; };
 		290B36D22768A51F0022587D /* Order+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		290B36DA2768CD090022587D /* ListSallonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSallonViewController.swift; sourceTree = "<group>"; };
+		290B36DC2768CD2A0022587D /* ListSallonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSallonTableViewCell.swift; sourceTree = "<group>"; };
+		290B36DE2768D86C0022587D /* Salon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salon.swift; sourceTree = "<group>"; };
 		290BDEEC2766127D00A84090 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		297514842760CCDA001F9BFB /* Saloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saloon.swift; sourceTree = "<group>"; };
 		297514902765EA14001F9BFB /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		29751494276610F5001F9BFB /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		2975149627661110001F9BFB /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 			children = (
 				29A7B869276087EF00E14A46 /* SalonsPhotoCollectionViewCell.swift */,
 				29A7B861275F761900E14A46 /* ServisesTableViewCell.swift */,
-				290B36CF2768959E0022587D /* SloneListTableViewCell.swift */,
+				290B36DC2768CD2A0022587D /* ListSallonTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -131,9 +131,10 @@
 			children = (
 				29A7B853275E36FB00E14A46 /* User.swift */,
 				297514902765EA14001F9BFB /* UserApi.swift */,
-				297514842760CCDA001F9BFB /* Saloon.swift */,
+				290B36DE2768D86C0022587D /* Salon.swift */,
 				29A7B865275F91E900E14A46 /* Service.swift */,
-				290B36CD276877CD0022587D /* OrderList.swift */,
+				290B36D12768A51F0022587D /* Order+CoreDataClass.swift */,
+				290B36D22768A51F0022587D /* Order+CoreDataProperties.swift */,
 			);
 			path = Modle;
 			sourceTree = "<group>";
@@ -141,8 +142,6 @@
 		29A7B812275CEF1300E14A46 = {
 			isa = PBXGroup;
 			children = (
-				290B36D12768A51F0022587D /* Order+CoreDataClass.swift */,
-				290B36D22768A51F0022587D /* Order+CoreDataProperties.swift */,
 				29A7B81D275CEF1300E14A46 /* Feather */,
 				29A7B837275CEF1400E14A46 /* FeatherTests */,
 				29A7B841275CEF1400E14A46 /* FeatherUITests */,
@@ -201,6 +200,7 @@
 				29A7B867276087A400E14A46 /* SallonPhotosViewController.swift */,
 				290B36CB276875080022587D /* OrderTableViewController.swift */,
 				290BDEEC2766127D00A84090 /* ViewController.swift */,
+				290B36DA2768CD090022587D /* ListSallonViewController.swift */,
 				29751494276610F5001F9BFB /* SignInVC.swift */,
 				2975149627661110001F9BFB /* SignUpVC.swift */,
 				290BDEF027673CF300A84090 /* Cells */,
@@ -350,16 +350,16 @@
 			files = (
 				290BDEED2766127D00A84090 /* ViewController.swift in Sources */,
 				290B36CC276875080022587D /* OrderTableViewController.swift in Sources */,
-				290B36CE276877CD0022587D /* OrderList.swift in Sources */,
-				297514852760CCDA001F9BFB /* Saloon.swift in Sources */,
+				290B36DD2768CD2A0022587D /* ListSallonTableViewCell.swift in Sources */,
 				29A7B868276087A400E14A46 /* SallonPhotosViewController.swift in Sources */,
 				29A7B86A276087EF00E14A46 /* SalonsPhotoCollectionViewCell.swift in Sources */,
 				29751495276610F5001F9BFB /* SignInVC.swift in Sources */,
-				290B36D02768959E0022587D /* SloneListTableViewCell.swift in Sources */,
 				29A7B866275F91E900E14A46 /* Service.swift in Sources */,
+				290B36DB2768CD090022587D /* ListSallonViewController.swift in Sources */,
 				29A7B81F275CEF1300E14A46 /* AppDelegate.swift in Sources */,
 				29A7B854275E36FB00E14A46 /* User.swift in Sources */,
 				29A7B860275F75F300E14A46 /* ServiceViewController.swift in Sources */,
+				290B36DF2768D86C0022587D /* Salon.swift in Sources */,
 				29A7B862275F761900E14A46 /* ServisesTableViewCell.swift in Sources */,
 				29A7B821275CEF1300E14A46 /* SceneDelegate.swift in Sources */,
 				297514912765EA14001F9BFB /* UserApi.swift in Sources */,
