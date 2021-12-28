@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 
 class SignInVC: UIViewController {
-
+    
     
     @IBOutlet weak var email: UITextField!
     
@@ -18,10 +18,10 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
-
+    
     func SignIn(email: String,password:String) {
         
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
@@ -44,23 +44,23 @@ class SignInVC: UIViewController {
     
     
     @IBAction func signIn(_ sender: Any) {
-        SignIn(email:  email.text ?? "", password: password.text ?? "")
-    
-        let inputPassword = Int(password.text ?? "0") ?? 0
         
-        if ((email.text) != nil) && ((inputPassword) != 0) {
-            performSegue(withIdentifier: "Home", sender: nil)
+        
+        let inputPassword = password.text ?? ""
+        
+        if email.text != nil && inputPassword != "" {
+            SignIn(email:  email.text ?? "", password: password.text ?? "")
         } else {
             
             let alertLogin = UIAlertController(title: "Error", message: "Please put your Email and Passward", preferredStyle: .alert)
             alertLogin.addAction(UIAlertAction(title: "ok", style: .cancel))
             
             present(alertLogin, animated: true)
-    
+            
         }
-         
+        
     }
     @IBAction func signUp(_ sender: Any) {
     }
-        
+    
 }

@@ -1,0 +1,75 @@
+
+/* Class = "UIButton"; configuration.title = "Sign up"; ObjectID = "AOf-0E-wOA"; */
+"AOf-0E-wOA.configuration.title" = "تسجيل جديد";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "AOf-0E-wOA"; */
+"AOf-0E-wOA.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Service"; ObjectID = "B7O-sk-ytW"; */
+"B7O-sk-ytW.title" = "الخدمات";
+
+/* Class = "UITextField"; placeholder = "Email "; ObjectID = "CvV-rQ-zDW"; */
+"CvV-rQ-zDW.placeholder" = "البريد الالكتروني ";
+
+/* Class = "UIButton"; configuration.title = "Add Service"; ObjectID = "HUD-Ru-dPW"; */
+"HUD-Ru-dPW.configuration.title" = "اضافة خدمة";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HUD-Ru-dPW"; */
+"HUD-Ru-dPW.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "title"; ObjectID = "I7K-ky-nhf"; */
+"I7K-ky-nhf.text" = "title";
+
+/* Class = "UINavigationItem"; title = "MY Order"; ObjectID = "INm-NU-j9H"; */
+"INm-NU-j9H.title" = "طلباتي";
+
+/* Class = "UIButton"; configuration.title = "Signup"; ObjectID = "Jqf-Nb-zve"; */
+"Jqf-Nb-zve.configuration.title" = "تسجيل";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Jqf-Nb-zve"; */
+"Jqf-Nb-zve.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Orddr"; ObjectID = "KhS-GV-4Tp"; */
+"KhS-GV-4Tp.title" = "طلباتي";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "OX1-0m-Pn3"; */
+"OX1-0m-Pn3.text" = "العنوان";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "QJP-1B-tPP"; */
+"QJP-1B-tPP.placeholder" = "الرقم السري";
+
+/* Class = "UIButton"; configuration.title = "Sign in "; ObjectID = "SYE-yZ-qfN"; */
+"SYE-yZ-qfN.configuration.title" = "تسجيل دخول ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "SYE-yZ-qfN"; */
+"SYE-yZ-qfN.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "SingUp"; ObjectID = "Szl-er-Daz"; */
+"Szl-er-Daz.text" = "تسجيل";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "TTr-pH-94n"; */
+"TTr-pH-94n.text" = "تفاصيل";
+
+/* Class = "UITextField"; placeholder = "Selected Date"; ObjectID = "UWa-cs-Bio"; */
+"UWa-cs-Bio.placeholder" = "اختيار تاريخ";
+
+/* Class = "UITextField"; placeholder = "Region"; ObjectID = "cUB-Yd-jSO"; */
+"cUB-Yd-jSO.placeholder" = "المنطقه";
+
+/* Class = "UITextField"; placeholder = "Street"; ObjectID = "eK7-se-eAG"; */
+"eK7-se-eAG.placeholder" = "شارع";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gvH-37-nEB"; */
+"gvH-37-nEB.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "n2K-4x-bIf"; */
+"n2K-4x-bIf.placeholder" = "رقم الجوال";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "teW-wT-6hQ"; */
+"teW-wT-6hQ.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "Sallons"; ObjectID = "uIk-vJ-XcP"; */
+"uIk-vJ-XcP.title" = "الصالونات";
+
+/* Class = "UITextField"; placeholder = "User Name"; ObjectID = "ubi-yc-RHi"; */
+"ubi-yc-RHi.placeholder" = "اسم المستخدم";

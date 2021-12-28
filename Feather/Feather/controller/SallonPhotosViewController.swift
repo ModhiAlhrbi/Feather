@@ -46,12 +46,27 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
     
     
     
-    var arrPhotoSallon = [UIImage(named: "FOGA")!,UIImage(named: "Foga1")!,UIImage(named: "Foga2")!,UIImage(named: "Foga3")!,UIImage(named: "Foga4")!,UIImage(named: "Foga5")!]
+    var arrPhotoCatan = ["collictionCATAN-1","collictionCATAN2","collictionCATAN3","collictionCATAN4"]
+    //[UIImage(named: "collictionCATAN-1")!,UIImage(named: "collictionCATAN2")!,UIImage(named: "collictionCATAN3")!,UIImage(named: "collictionCATAN4")!]
+    
+    var arrPhotoSwan = ["collictionSWAN1","collictiponSWAN2","collictionSWAN3","collictionSWAN4"]
+    //[UIImage(named: "collictionSWAN1")!,UIImage(named: "collictiponSWAN2")!,UIImage(named: "collictionSWAN3")!,UIImage(named: "collictionSWAN4")!]
+    
+     var arrPhotoPearlyCare = ["Foga1","Foga2","Foga3","Foga4","Foga5"]
+    //[UIImage(named: "FOGA")!,UIImage(named: "Foga1")!,UIImage(named: "Foga2")!,UIImage(named: "Foga3")!,UIImage(named: "Foga4")!,UIImage(named: "Foga5")!]
+    
+     var arrPhotoAntiAgmal = ["Foga1","Foga2","Foga3","Foga4","Foga5"]
+    //[UIImage(named: "FOGA")!,UIImage(named: "Foga1")!,UIImage(named: "Foga2")!,UIImage(named: "Foga3")!,UIImage(named: "Foga4")!,UIImage(named: "Foga5")!]
+    
+     var arrPhotoFoga = ["Foga1","Foga2","Foga3","Foga4","Foga5"]
+    //[UIImage(named: "FOGA")!,UIImage(named: "Foga1")!,UIImage(named: "Foga2")!,UIImage(named: "Foga3")!,UIImage(named: "Foga4")!,UIImage(named: "Foga5")!]
+    
+    
+    var PickerCatan = ["Pedicure" : 100  ,"Manicure" : 150 ,"Skin cleaning" : 90 ,"Massage" : 220 ,"Makeup" : 250 ]
     
     
     
     
-    var arrServicesPicker = ["Pedicure" ,"Manicure","Skin cleaning","Massage","Makeup"]
     /*Service(nameService: "Pedicure", imgServicePhoto: UIImage(named: "pedicure")!),
      Service(nameService: "Manicure", imgServicePhoto: UIImage(named: "manicure2")!),
      Service(nameService: "Skin cleaning", imgServicePhoto: UIImage(named: "Skin cleaning1")!),
@@ -60,7 +75,7 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
      ]
      */
     
-    
+    var data:[(key:String,values:Double)]?
     
     var timer : Timer?
     var currentCellIndex = 0
@@ -74,7 +89,7 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
         collectionView.dataSource = self
         startTimer()
         creatDatePicker()
-        
+        data = selctedService?.subServices.subServices.compactMap({(key:$0,values:$1)})
     }
     
     func startTimer(){
@@ -117,12 +132,12 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return arrServicesPicker.count
+        return selctedService?.subServices.subServices.count ?? 0
     }
     
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return arrServicesPicker[row]
+        return data?[row].key
     }
     
     
@@ -168,16 +183,18 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
         alert.addAction(UIAlertAction(title: "ok", style: .cancel))
         present(alert,animated: true)
         
-        lblServiceName.text = arrServicesPicker[pickerServic.selectedRow(inComponent: 0)]
+        let name = data?[pickerServic.selectedRow(inComponent: 0)].key
+        let price = data?[pickerServic.selectedRow(inComponent: 0)].values
         
-        let selectedServiceName = arrServicesPicker[pickerServic.selectedRow(inComponent: 0)]
+        lblServiceName.text = name
+        
         let selctedServiceDate = datePicker.date
         
         
         let context = persntenContiner.viewContext
         context.performAndWait({
             let newOrder = Order (context: context)
-            newOrder.serviceName = selctedService?.nameService
+            newOrder.serviceName = name
             newOrder.date = selctedServiceDate
             
             do {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pGP-Qf-rnj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -150,7 +150,6 @@
                                         <buttonConfiguration key="configuration" style="gray" title="Sign in "/>
                                         <connections>
                                             <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yOs-tj-jUr"/>
-                                            <segue destination="Ebb-kz-JbV" kind="show" id="eCh-Pz-eBS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOf-0E-wOA">
@@ -333,21 +332,7 @@
                                                 </imageView>
                                                 <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="159-E2-fLF">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="201"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gvH-37-nEB">
-                                                            <rect key="frame" x="108" y="131" width="42" height="31"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="gvH-37-nEB" secondAttribute="trailing" constant="264" id="JWx-cD-893"/>
-                                                        <constraint firstItem="gvH-37-nEB" firstAttribute="leading" secondItem="159-E2-fLF" secondAttribute="leading" constant="108" id="QYT-7J-Qbo"/>
-                                                        <constraint firstItem="gvH-37-nEB" firstAttribute="top" secondItem="159-E2-fLF" secondAttribute="top" constant="131" id="Wj6-ST-0JA"/>
-                                                        <constraint firstAttribute="bottom" secondItem="gvH-37-nEB" secondAttribute="bottom" constant="39" id="aXG-Dr-GG8"/>
-                                                    </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="I7K-ky-nhf">
                                                     <rect key="frame" x="40" y="128" width="49.5" height="37"/>
@@ -415,7 +400,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GF5-Sj-QW6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847.826086956522" y="-163.39285714285714"/>
+            <point key="canvasLocation" x="1857" y="-181"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lhe-NC-4rT">
@@ -437,7 +422,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoQ-gC-UXh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937.68115942028987" y="-163.39285714285714"/>
+            <point key="canvasLocation" x="938" y="-181"/>
         </scene>
         <!--Orddr-->
         <scene sceneID="0l7-Qv-IF8">
@@ -566,7 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdu-eM-2c2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3032" y="-127"/>
+            <point key="canvasLocation" x="2978" y="-163"/>
         </scene>
         <!--Sallons-->
         <scene sceneID="vsJ-gU-MaY">
@@ -581,13 +566,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pGP-Qf-rnj" kind="relationship" relationship="rootViewController" id="PlH-wg-bQw"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oB6-0A-41b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938" y="744"/>
+            <point key="canvasLocation" x="938" y="567"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="PlH-wg-bQw"/>
         <segue reference="nk2-e3-yYX"/>
         <segue reference="obH-l5-DGQ"/>
     </inferredMetricsTieBreakers>

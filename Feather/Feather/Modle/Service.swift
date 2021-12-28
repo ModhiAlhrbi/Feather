@@ -14,4 +14,17 @@ struct Service {
     let description : String
     let imgServicePhoto : UIImage
     let price : Double
+    
+    let subServices: SubServices
+    
+    
+    
+}
+
+struct SubServices {
+    
+    let images : [String]
+    let subServices : [String]
+    
+    
 }

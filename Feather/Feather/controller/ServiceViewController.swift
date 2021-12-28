@@ -11,7 +11,7 @@ class ServiceViewController: UIViewController , UITableViewDelegate,UITableViewD
     
     
     
-    
+    var select4 : Salon?
     
     var selctedService : Service?
     
@@ -64,8 +64,6 @@ class ServiceViewController: UIViewController , UITableViewDelegate,UITableViewD
         let photoWidthRatio = photo.size.width / photo.size.height
         return tableView.frame.width / photoWidthRatio
     }
-    
-    
     
     
     
