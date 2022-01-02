@@ -62,18 +62,9 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
     //[UIImage(named: "FOGA")!,UIImage(named: "Foga1")!,UIImage(named: "Foga2")!,UIImage(named: "Foga3")!,UIImage(named: "Foga4")!,UIImage(named: "Foga5")!]
     
     
-    var PickerCatan = ["Pedicure" : 100  ,"Manicure" : 150 ,"Skin cleaning" : 90 ,"Massage" : 220 ,"Makeup" : 250 ]
+    var PickerCatan: [String : Double] = ["Pedicure 100 SR" : 100  ,"Manicure 150 SR" : 150 ,"Skin cleaning 90 SR" : 90 ,"Massage 220 SR" : 220 ,"Makeup 250 " : 250 ]
     
-    
-    
-    
-    /*Service(nameService: "Pedicure", imgServicePhoto: UIImage(named: "pedicure")!),
-     Service(nameService: "Manicure", imgServicePhoto: UIImage(named: "manicure2")!),
-     Service(nameService: "Skin cleaning", imgServicePhoto: UIImage(named: "Skin cleaning1")!),
-     Service(nameService: "Massage", imgServicePhoto: UIImage(named: "Massage1")!),
-     Service(nameService: "Makeup", imgServicePhoto: UIImage(named: "makeup1")!)
-     ]
-     */
+
     
     var data:[(key:String,values:Double)]?
     
@@ -98,7 +89,7 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
     
     @objc func moveToNextIndex() {
         currentCellIndex += 1
-        if currentCellIndex > arrPhotoSallon.count-1 {
+        if currentCellIndex > (selctedService?.subServices.images.count)!-1 {
             currentCellIndex = 0
         }
         
@@ -107,12 +98,19 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrPhotoSallon.count    }
+        
+        guard let images = selctedService?.subServices.images else {return 0}
+        return images.count
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "salonPhotosCell", for: indexPath) as! SalonsPhotoCollectionViewCell
         
-        cell.imgPhotoSallon.image = arrPhotoSallon[indexPath.row]
+        guard let images = selctedService?.subServices.images else {return UICollectionViewCell()}
+        
+        cell.imgPhotoSallon.image = UIImage(named: images[indexPath.row])
+        
         return cell
         
     }

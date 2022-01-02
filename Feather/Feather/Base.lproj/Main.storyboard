@@ -510,7 +510,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YHT-aS-482">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="182"/>
                                                 </imageView>
-                                                <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jo0-nY-OHn">
+                                                <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jo0-nY-OHn">
                                                     <rect key="frame" x="0.0" y="-87" width="414" height="297"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
@@ -576,7 +576,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PlH-wg-bQw"/>
+        <segue reference="xIe-ns-Q3J"/>
         <segue reference="nk2-e3-yYX"/>
         <segue reference="obH-l5-DGQ"/>
     </inferredMetricsTieBreakers>

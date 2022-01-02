@@ -24,7 +24,7 @@ struct Service {
 struct SubServices {
     
     let images : [String]
-    let subServices : [String]
+    let subServices : [String:Double]
     
     
 }
