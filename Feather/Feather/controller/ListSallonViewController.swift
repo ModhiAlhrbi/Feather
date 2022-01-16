@@ -16,21 +16,20 @@ class ListSallonViewController: UIViewController, UITableViewDelegate,UITableVie
     
     var arrListSaloon : [Salon] = [
         
-        Salon(name: "SWAN", desc: "desc", imgListSalone: UIImage(named: "SWANSPA-")!, services: []),
-        Salon(name: "CATAN", desc: "desc", imgListSalone: UIImage(named: "S-CATAN")!, services: []),
-        Salon(name: "Peerly Care", desc: "desc", imgListSalone: UIImage(named: "S-peerly Care")!, services: []),
-        Salon(name: "Beautysecretc", desc: "", imgListSalone: UIImage(named: "Beautysecretc")!, services: []),
-       
-        Salon(name: "AntiAgmal", desc: "desc", imgListSalone: UIImage(named: "S-AntiAgmal")!, services: []),
-        Salon(name: "FOGA", desc: "desc", imgListSalone: UIImage(named: "S-FOGA")!, services: [])
-        
+        Salon(name: "Beautysecretc", desc: "", imgListSalone: UIImage(named: "newBEUTY##")!, services: []),
+        Salon(name: "SWAN", desc: "desc", imgListSalone: UIImage(named: "newSWAN##")!, services: []),
+        Salon(name: "CATAN", desc: "desc", imgListSalone: UIImage(named: "newCATAN##")!, services: []),
+        Salon(name: "+FOGA+⁩", desc: "desc", imgListSalone: UIImage(named: "newFOGA##")!, services: []),
+        Salon(name: "Peerly Care", desc: "desc", imgListSalone: UIImage(named: "newPERLYCARE##")!, services: []),
+        Salon(name: "AntiAgmal", desc: "desc", imgListSalone: UIImage(named: "newANTIAGMAL##")!, services: []),
+
     ]
-    var arrBeautysecretc = ["","","",""]
+    
+    var arrBeautysecretc = ["collictionBeautysecretc1","collictionBeautysecretc2","collictionBeautysecretc3","collictionBeautysecretc4","collictionBeautysecretc5","collictionBeautysecretc6"]
     
     var arrPhotoCatan = ["collictionCATAN-1","collictionCATAN2","collictionCATAN3","collictionCATAN4"]
     
     var arrPhotoSwan = ["collictionSWAN1","collictiponSWAN2","collictionSWAN3","collictionSWAN4"]
-    
     
     var arrPhotoPearlyCare = ["collictionPERLY1","collictionPERLY2","collictionPERLY3"]
     
@@ -40,18 +39,49 @@ class ListSallonViewController: UIViewController, UITableViewDelegate,UITableVie
     var arrPhotoFoga = ["Foga1","Foga2","Foga3","Foga4","Foga5"]
     
     
+    var PickerBeautysecretc:[String:Double] = [
+                    
+        "Pedicure 150 SR".localized : 150  ,
+        "Manicure 200 SR".localized : 200 ,
+        "Skin cleaning 150 SR".localized : 150,
+        "Massage 220 SR".localized : 220 ,
+        "Makeup 250 SR".localized : 250 ]
     
-    var PickerCatan: [String : Double] = ["Pedicure 100 SR" : 100  ,"Manicure 200 SR" : 200 ,"Skin cleaning" : 90 ,"Massage" : 220 ,"Makeup" : 250 ]
+    var PickerCatan: [String : Double] = [
+        "Pedicure 100 SR".localized : 100  ,
+        "Manicure 200 SR".localized : 200 ,
+        "Skin cleaning 200 SR".localized : 90 ,
+        "Massage 220 SR".localized : 220 ,
+        "Makeup 250 SR".localized : 250 ]
     
-    var PickerSwan: [String : Double] = ["Pedicure" : 100  ,"Manicure" : 150 ,"Skin cleaning" : 90 ,"Massage" : 220 ,"Makeup" : 250 ]
+    var PickerSwan: [String : Double] = [
+        "Pedicure 100  SR".localized : 100  ,
+        "Manicure 150 SR".localized : 150 ,
+        "Skin cleaning 90 SR".localized : 90 ,
+        "Massage 220 SR".localized : 220 ,"Makeup 250 SR".localized : 250 ]
     
     
-    var PickerPearlyCare: [String : Double] = ["Pedicure 120 SR" : 100  ,"Manicure" : 150 ,"Skin cleaning" : 90 ,"Massage" : 220 ,"Makeup" : 250 ]
+    var PickerPearlyCare: [String : Double] = [
+        "Pedicure 120 SR".localized : 100  ,
+        "Manicure 150 SR".localized : 150 ,
+        "Skin cleaning 150 SR".localized : 150 ,
+        "Massage 220 SR".localized : 220 ,
+        "Makeup 300 SR".localized : 300 ]
     
     
-    var PickerAntiAgmal: [String : Double] = ["Pedicure" : 100  ,"Manicure" : 150 ,"Skin cleaning" : 90 ,"Massage" : 220 ,"Makeup" : 250 ]
+    var PickerAntiAgmal: [String : Double] = [
+        "Pedicure  80 SR".localized : 80  ,
+        "Manicure 60 SR" .localized: 60 ,
+        "Skin cleaning 70 SR".localized : 70 ,
+        "Massage 120 SR".localized : 120 ,
+        "Makeup 120 SR".localized : 120 ]
     
-    var PickerFoga: [String : Double] = ["Pedicure" : 100  ,"Manicure" : 150 ,"Skin cleaning" : 90 ,"Massage" : 220 ,"Makeup" : 250 ]
+    var PickerFoga: [String : Double] = [
+        "Pedicure 180 SR".localized : 180  ,
+        "Manicure 200 SR".localized : 200 ,
+        "Skin cleaning 200 SR".localized : 200 ,
+        "Massage 250 SR" .localized: 250 ,
+        "Makeup 250 SR".localized : 250 ]
     
     
     
@@ -60,7 +90,7 @@ class ListSallonViewController: UIViewController, UITableViewDelegate,UITableVie
         populateServices()
         tableViewList.delegate = self
         tableViewList.dataSource = self
-        
+        self.title = "Sallons List".localized
         
     }
     
@@ -68,107 +98,108 @@ class ListSallonViewController: UIViewController, UITableViewDelegate,UITableVie
     
     func populateServices(){
         
-        let makeupCatan = Service(nameService: "Makeup", description: "", imgServicePhoto: UIImage(named: "makeup1")!, price: 200, subServices: SubServices(images: arrPhotoCatan, subServices: PickerCatan))
         
         
+        let makeupBeautysecretc = Service(nameService: "Makeup".localized, description: "", imgServicePhoto: UIImage(named: "makeup1")!, price: 200, subServices: SubServices(images: arrBeautysecretc, subServices: PickerBeautysecretc))
         
-        let makeupSwan = Service(nameService: "Makeup", description: "", imgServicePhoto: UIImage(named: "makeup1")!, price: 250,subServices: SubServices(images: arrPhotoSwan, subServices: PickerSwan))
+        let makeupCatan = Service(nameService: "Makeup".localized, description: "", imgServicePhoto: UIImage(named: "makeup1")!, price: 200, subServices: SubServices(images: arrPhotoCatan, subServices: PickerCatan))
         
         
-        let makeupPerlyCare = Service(nameService: "Makeup", description: "", imgServicePhoto: UIImage(named: "makeup1")!, price: 250, subServices: SubServices(images: arrPhotoPearlyCare, subServices: PickerPearlyCare))
+        let makeupSwan = Service(nameService: "Makeup".localized, description: "", imgServicePhoto: UIImage(named: "makeup1")!, price: 250,subServices: SubServices(images: arrPhotoSwan, subServices: PickerSwan))
         
         
-        let makeupAntiAgmal = Service(nameService: "Makeup", description: "", imgServicePhoto: UIImage(named: "makeup1")!, price: 150, subServices: SubServices(images: arrPhotoAntiAgmal, subServices: PickerAntiAgmal))
+        let makeupPerlyCare = Service(nameService: "Makeup".localized, description: "", imgServicePhoto: UIImage(named: "makeup1")!, price: 250, subServices: SubServices(images: arrPhotoPearlyCare, subServices: PickerPearlyCare))
         
         
-        let makeupFoga = Service(nameService: "Makeup", description: "", imgServicePhoto: UIImage(named: "makeup1")!, price: 250, subServices: SubServices(images: arrPhotoFoga, subServices: PickerFoga))
+        let makeupAntiAgmal = Service(nameService: "Makeup".localized, description: "", imgServicePhoto: UIImage(named: "makeup1")!, price: 150, subServices: SubServices(images: arrPhotoAntiAgmal, subServices: PickerAntiAgmal))
         
         
+        let makeupFoga = Service(nameService: "Makeup".localized, description: "", imgServicePhoto: UIImage(named: "makeup1")!, price: 250, subServices: SubServices(images: arrPhotoFoga, subServices: PickerFoga))
         
-        let massageCatan = Service(nameService: "Massage", description: "", imgServicePhoto: UIImage(named: "Massage1")!, price: 250,subServices:SubServices(images: arrPhotoCatan, subServices: PickerCatan))
         
+        let massageBeautysecretc = Service(nameService: "Massage".localized, description: "", imgServicePhoto: UIImage(named: "Massage1")!, price: 250, subServices: SubServices(images: arrBeautysecretc, subServices: PickerBeautysecretc))
         
         
-        let massageSwan = Service(nameService: "Massage", description: "", imgServicePhoto: UIImage(named: "Massage1")!, price: 230, subServices: SubServices(images: arrPhotoSwan, subServices: PickerSwan))
+        let massageCatan = Service(nameService: "Massage".localized, description: "", imgServicePhoto: UIImage(named: "Massage1")!, price: 250,subServices:SubServices(images: arrPhotoCatan, subServices: PickerCatan))
         
         
         
-        let massagePerlyCare = Service(nameService: "Massage", description: "", imgServicePhoto: UIImage(named: "Massage1")!, price: 350, subServices: SubServices(images: arrPhotoPearlyCare, subServices: PickerPearlyCare))
+        let massageSwan = Service(nameService: "Massage".localized, description: "", imgServicePhoto: UIImage(named: "Massage1")!, price: 230, subServices: SubServices(images: arrPhotoSwan, subServices: PickerSwan))
         
         
         
-        let massageAntiAgmal = Service(nameService: "Massage", description: "", imgServicePhoto: UIImage(named: "Massage1")!, price: 150, subServices: SubServices(images: arrPhotoAntiAgmal, subServices: PickerAntiAgmal))
+        let massagePerlyCare = Service(nameService: "Massage".localized, description: "", imgServicePhoto: UIImage(named: "Massage1")!, price: 350, subServices: SubServices(images: arrPhotoPearlyCare, subServices: PickerPearlyCare))
         
         
         
-        let massageFoga = Service(nameService: "Massage", description: "", imgServicePhoto: UIImage(named: "Massage1")!, price: 250, subServices: SubServices(images: arrPhotoFoga, subServices: PickerFoga))
+        let massageAntiAgmal = Service(nameService: "Massage".localized, description: "", imgServicePhoto: UIImage(named: "Massage1")!, price: 150, subServices: SubServices(images: arrPhotoAntiAgmal, subServices: PickerAntiAgmal))
         
         
         
-        let manicureCatan = Service(nameService: "Manicure", description: "", imgServicePhoto: UIImage(named: "manicure2")!, price: 200 ,subServices:SubServices(images: arrPhotoCatan, subServices: PickerCatan))
+        let massageFoga = Service(nameService: "Massage".localized, description: "", imgServicePhoto: UIImage(named: "Massage1")!, price: 250, subServices: SubServices(images: arrPhotoFoga, subServices: PickerFoga))
         
         
-        let manicureSwan = Service(nameService: "Manicure", description: "", imgServicePhoto: UIImage(named: "manicure2")!, price: 200 ,subServices:SubServices(images: arrPhotoSwan, subServices: PickerSwan))
+        let manicureBeautysecretc = Service(nameService: "Manicure".localized, description: "", imgServicePhoto: UIImage(named: "manicure2")!, price:200, subServices: SubServices(images: arrBeautysecretc, subServices: PickerBeautysecretc))
         
+        let manicureCatan = Service(nameService: "Manicure".localized, description: "", imgServicePhoto: UIImage(named: "manicure2")!, price: 200 ,subServices:SubServices(images: arrPhotoCatan, subServices: PickerCatan))
         
         
+        let manicureSwan = Service(nameService: "Manicure".localized, description: "", imgServicePhoto: UIImage(named: "manicure2")!, price: 200 ,subServices:SubServices(images: arrPhotoSwan, subServices: PickerSwan))
         
-        let manicurePerlyCare = Service(nameService: "Manicure", description: "", imgServicePhoto: UIImage(named: "manicure2")!, price: 180 ,subServices:SubServices(images: arrPhotoPearlyCare, subServices: PickerPearlyCare))
         
+        let manicurePerlyCare = Service(nameService: "Manicure".localized, description: "", imgServicePhoto: UIImage(named: "manicure2")!, price: 180 ,subServices:SubServices(images: arrPhotoPearlyCare, subServices: PickerPearlyCare))
         
         
-        let manicureAntiAgmal = Service(nameService: "Manicure", description: "", imgServicePhoto: UIImage(named: "manicure2")!, price: 60 ,subServices:SubServices(images: arrPhotoAntiAgmal, subServices: PickerAntiAgmal))
+        let manicureAntiAgmal = Service(nameService: "Manicure".localized, description: "", imgServicePhoto: UIImage(named: "manicure2")!, price: 60 ,subServices:SubServices(images: arrPhotoAntiAgmal, subServices: PickerAntiAgmal))
         
         
+        let manicureFoga = Service(nameService: "Manicure".localized, description: "", imgServicePhoto: UIImage(named: "manicure2")!, price: 150 ,subServices:SubServices(images: arrPhotoFoga, subServices: PickerFoga))
         
+        let pedicureBeautysecretc = Service(nameService: "Pedicure".localized, description: "des", imgServicePhoto: UIImage(named: "pedicure1")!, price: 150,subServices:SubServices(images: arrBeautysecretc, subServices: PickerBeautysecretc))
         
-        let manicureFoga = Service(nameService: "Manicure", description: "", imgServicePhoto: UIImage(named: "manicure2")!, price: 150 ,subServices:SubServices(images: arrPhotoFoga, subServices: PickerFoga))
         
+        let pedicureCatan = Service(nameService: "Pedicure".localized, description: "des", imgServicePhoto: UIImage(named: "pedicure1")!, price: 150,subServices:SubServices(images: arrPhotoCatan, subServices: PickerCatan))
         
         
+        let pedicureSwan = Service(nameService: "Pedicure".localized, description: "des", imgServicePhoto: UIImage(named: "pedicure1")!, price: 200,subServices:SubServices(images: arrPhotoSwan, subServices: PickerSwan))
         
-        let pedicureCatan = Service(nameService: "Pedicure", description: "des", imgServicePhoto: UIImage(named: "pedicure1")!, price: 150,subServices:SubServices(images: arrPhotoCatan, subServices: PickerCatan))
         
+        let pedicurePerlyCare = Service(nameService: "Pedicure".localized, description: "des", imgServicePhoto: UIImage(named: "pedicure1")!, price: 150,subServices:SubServices(images: arrPhotoPearlyCare, subServices: PickerPearlyCare))
         
-        let pedicureSwan = Service(nameService: "Pedicure", description: "des", imgServicePhoto: UIImage(named: "pedicure1")!, price: 200,subServices:SubServices(images: arrPhotoSwan, subServices: PickerSwan))
         
+        let pedicureAntiAgmal = Service(nameService: "Pedicure".localized, description: "des", imgServicePhoto: UIImage(named: "pedicure1")!, price: 80,subServices:SubServices(images: arrPhotoAntiAgmal, subServices: PickerAntiAgmal))
         
-        let pedicurePerlyCare = Service(nameService: "Pedicure", description: "des", imgServicePhoto: UIImage(named: "pedicure1")!, price: 150,subServices:SubServices(images: arrPhotoPearlyCare, subServices: PickerPearlyCare))
         
         
-        let pedicureAntiAgmal = Service(nameService: "Pedicure", description: "des", imgServicePhoto: UIImage(named: "pedicure1")!, price: 80,subServices:SubServices(images: arrPhotoAntiAgmal, subServices: PickerAntiAgmal))
+        let pedicureFoga = Service(nameService: "Pedicure".localized, description: "des", imgServicePhoto: UIImage(named: "pedicure1")!, price: 200,subServices:SubServices(images: arrPhotoFoga, subServices: PickerFoga))
         
+        let skinCleaningBeautysecretc = Service(nameService: "Skin cleaning".localized, description: "des", imgServicePhoto: UIImage(named: "Skin cleaning1")!, price:200,subServices:SubServices(images: arrBeautysecretc, subServices: PickerBeautysecretc))
         
         
-        let pedicureFoga = Service(nameService: "Pedicure", description: "des", imgServicePhoto: UIImage(named: "pedicure1")!, price: 200,subServices:SubServices(images: arrPhotoFoga, subServices: PickerFoga))
         
+        let skinCleaningCatan = Service(nameService: "Skin cleaning".localized, description: "des", imgServicePhoto: UIImage(named: "Skin cleaning1")!, price: 150,subServices:SubServices(images: arrPhotoCatan, subServices: PickerCatan))
         
         
-        let skinCleaningCatan = Service(nameService: "Skin cleaning", description: "des", imgServicePhoto: UIImage(named: "Skin cleaning1")!, price: 150,subServices:SubServices(images: arrPhotoCatan, subServices: PickerCatan))
+        let skinCleaningSwan = Service(nameService: "Skin cleaning".localized, description: "des", imgServicePhoto: UIImage(named: "Skin cleaning1")!, price: 150,subServices:SubServices(images: arrPhotoSwan, subServices: PickerSwan))
         
         
-        let skinCleaningSwan = Service(nameService: "Skin cleaning", description: "des", imgServicePhoto: UIImage(named: "Skin cleaning1")!, price: 150,subServices:SubServices(images: arrPhotoSwan, subServices: PickerSwan))
         
+        let skinCleaningPerlyCare = Service(nameService: "Skin cleaning".localized, description: "des", imgServicePhoto: UIImage(named: "Skin cleaning1")!, price: 150,subServices:SubServices(images: arrPhotoPearlyCare, subServices: PickerPearlyCare))
         
         
-        let skinCleaningPerlyCare = Service(nameService: "Skin cleaning", description: "des", imgServicePhoto: UIImage(named: "Skin cleaning1")!, price: 150,subServices:SubServices(images: arrPhotoPearlyCare, subServices: PickerPearlyCare))
+        let skinCleaningAntiAgmal = Service(nameService: "Skin cleaning".localized, description: "des", imgServicePhoto: UIImage(named: "Skin cleaning1")!, price: 150,subServices:SubServices(images: arrPhotoAntiAgmal, subServices: PickerAntiAgmal))
         
         
-        let skinCleaningAntiAgmal = Service(nameService: "Skin cleaning", description: "des", imgServicePhoto: UIImage(named: "Skin cleaning1")!, price: 150,subServices:SubServices(images: arrPhotoAntiAgmal, subServices: PickerAntiAgmal))
+        let skinCleaningFoga = Service(nameService: "Skin cleaning".localized, description: "des", imgServicePhoto: UIImage(named: "Skin cleaning1")!, price: 150,subServices:SubServices(images: arrPhotoFoga, subServices: PickerFoga))
         
         
-        let skinCleaningFoga = Service(nameService: "Skin cleaning", description: "des", imgServicePhoto: UIImage(named: "Skin cleaning1")!, price: 150,subServices:SubServices(images: arrPhotoFoga, subServices: PickerFoga))
         
-        
-        
-        
-        
-        arrListSaloon[0].services = [makeupSwan,pedicureSwan,manicureSwan, massageSwan,skinCleaningSwan]
-        arrListSaloon[1].services = [makeupCatan,skinCleaningCatan,pedicureCatan,manicureCatan,massageCatan]
-        arrListSaloon[2].services = [pedicurePerlyCare,manicurePerlyCare,massagePerlyCare,skinCleaningPerlyCare]
-        arrListSaloon[3].services = [makeupAntiAgmal,massageAntiAgmal,pedicureAntiAgmal,manicureAntiAgmal,skinCleaningAntiAgmal]
-        arrListSaloon[4].services = [makeupFoga,pedicureFoga,manicureFoga,massageFoga,skinCleaningFoga]
-        
+        arrListSaloon[0].services = [makeupBeautysecretc,massageBeautysecretc,manicureBeautysecretc,pedicureBeautysecretc,skinCleaningBeautysecretc]
+        arrListSaloon[1].services = [makeupSwan,pedicureSwan,manicureSwan, massageSwan,skinCleaningSwan]
+        arrListSaloon[2].services = [makeupCatan,skinCleaningCatan,pedicureCatan,manicureCatan,massageCatan]
+        arrListSaloon[3].services = [makeupFoga,pedicureFoga,manicureFoga,massageFoga,skinCleaningFoga]
+        arrListSaloon[4].services =  [pedicurePerlyCare,manicurePerlyCare,massagePerlyCare,skinCleaningPerlyCare]
+        arrListSaloon[5].services = [makeupAntiAgmal,massageAntiAgmal,pedicureAntiAgmal,manicureAntiAgmal,skinCleaningAntiAgmal]
         
     }
     
@@ -208,6 +239,14 @@ class ListSallonViewController: UIViewController, UITableViewDelegate,UITableVie
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let photo = arrListSaloon[indexPath.row].imgListSalone
         let photoSizeRatio = photo.size.width / photo.size.height
-        return tableView.frame.width / photoSizeRatio
+        return (tableView.frame.width / photoSizeRatio) 
     }
+}
+
+extension String {
+    
+    var localized : String {
+        return NSLocalizedString(self, comment: "")
+    }
+    
 }

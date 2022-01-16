@@ -27,6 +27,7 @@ class ServiceViewController: UIViewController , UITableViewDelegate,UITableViewD
         
         tableView.delegate = self
         tableView.dataSource = self
+        self.title = "Services List".localized
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

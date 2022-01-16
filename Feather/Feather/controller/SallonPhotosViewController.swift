@@ -134,8 +134,12 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return data?[row].key
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return data?[row].key
+//    }
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+
+        return NSAttributedString(string: data?[row].key ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.label])
     }
     
     
@@ -178,14 +182,20 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
     @IBAction func addService(_ sender: Any) {
         
         let alert = UIAlertController(title: "The appointment has been successfully booked ", message: "", preferredStyle:.alert)
-        alert.addAction(UIAlertAction(title: "ok", style: .cancel))
+        alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: { action in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        
         present(alert,animated: true)
+        
+        
+        
         
         let name = data?[pickerServic.selectedRow(inComponent: 0)].key
         let price = data?[pickerServic.selectedRow(inComponent: 0)].values
         
         lblServiceName.text = name
-        
+        lblServiceName.textColor
         let selctedServiceDate = datePicker.date
         
         
