@@ -53,4 +53,9 @@
 "Skin cleaning 200 SR" = "تنظيف بشرة ٢٠٠ ر.س ";
 "Massage 250 SR" = "مساج ٢٥٠ ر.س";
 "Makeup 250 SR" = "ميك اب ٢٥٠ ر.س";
-
+"Error" = "خطاء";
+"Please put your Email and Passward" = "ادخل ايميلك والرقم السري";
+"ok" = "تم";
+"email:" = "إيميل";
+"Password:" = "الرقم السري";
+"The appointment has been successfully booked " = "تم حجز الموعد بنجاح";

@@ -181,8 +181,8 @@ class SallonPhotosViewController: UIViewController, UICollectionViewDelegate, UI
     
     @IBAction func addService(_ sender: Any) {
         
-        let alert = UIAlertController(title: "The appointment has been successfully booked ", message: "", preferredStyle:.alert)
-        alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: { action in
+        let alert = UIAlertController(title: "The appointment has been successfully booked ".localized, message: "", preferredStyle:.alert)
+        alert.addAction(UIAlertAction(title: "ok".localized, style: .cancel, handler: { action in
             self.navigationController?.popViewController(animated: true)
         }))
         

@@ -26,7 +26,7 @@ class SignInVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if Auth.auth().currentUser?.uid != nil {
-         // performSegue(withIdentifier: "Home", sender: nil)
+        // performSegue(withIdentifier: "Home", sender: nil)
         }
         
     }
@@ -59,8 +59,8 @@ class SignInVC: UIViewController {
             SignIn(email:  email.text ?? "", password: password.text ?? "")
         } else {
             
-            let alertLogin = UIAlertController(title: "Error", message: "Please put your Email and Passward", preferredStyle: .alert)
-            alertLogin.addAction(UIAlertAction(title: "ok", style: .cancel))
+            let alertLogin = UIAlertController(title: "Error".localized, message: "Please put your Email and Passward".localized, preferredStyle: .alert)
+            alertLogin.addAction(UIAlertAction(title: "ok".localized, style: .cancel))
             
             present(alertLogin, animated: true)
             
